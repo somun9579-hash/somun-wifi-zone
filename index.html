@@ -1,531 +1,100 @@
-<!DOCTYPE html>
-<html lang="bn">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>সুমন নেটওয়ার্ক | Wi-Fi Service</title>
-
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial,"Noto Sans Bengali",sans-serif;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:#f4f8ff;
-  color:#172033;
-}
-
-/* Header */
-header{
-  background:linear-gradient(135deg,#0757d9,#00a8ff);
-  color:white;
-  padding:18px 6%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  box-shadow:0 3px 15px rgba(0,0,0,.15);
-}
-
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-size:23px;
-  font-weight:bold;
-}
-
-.logo-icon{
-  width:45px;
-  height:45px;
-  border-radius:50%;
-  background:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:25px;
-}
-
-nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:18px;
-  font-weight:bold;
-}
-
-/* Hero */
-.hero{
-  min-height:520px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:60px 20px;
-  background:
-  radial-gradient(circle at 20% 20%,rgba(0,180,255,.4),transparent 30%),
-  radial-gradient(circle at 80% 80%,rgba(0,80,255,.35),transparent 30%),
-  linear-gradient(135deg,#031b4e,#087ee8);
-  color:white;
-}
-
-.hero-logo{
-  width:115px;
-  height:115px;
-  border-radius:50%;
-  background:white;
-  margin:0 auto 20px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:65px;
-  box-shadow:0 10px 35px rgba(0,0,0,.3);
-}
-
-.hero h1{
-  font-size:48px;
-  margin-bottom:12px;
-}
-
-.hero p{
-  font-size:21px;
-  margin:8px 0;
-}
-
-.location{
-  margin-top:18px;
-  font-size:18px;
-}
-
-/* Section */
-section{
-  padding:60px 7%;
-}
-
-.section-title{
-  text-align:center;
-  font-size:32px;
-  margin-bottom:35px;
-  color:#0757d9;
-}
-
-/* Package */
-.package{
-  max-width:430px;
-  margin:auto;
-  background:white;
-  border-radius:25px;
-  padding:35px;
-  text-align:center;
-  box-shadow:0 8px 30px rgba(0,0,0,.12);
-  border:2px solid #dceaff;
-}
-
-.package .speed{
-  font-size:42px;
-  font-weight:bold;
-  color:#0757d9;
-}
-
-.package .price{
-  font-size:38px;
-  font-weight:bold;
-  margin:15px 0;
-  color:#111;
-}
-
-.package small{
-  color:#666;
-}
-
-.btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:14px 25px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:bold;
-  color:white;
-  background:#087ee8;
-  box-shadow:0 5px 15px rgba(0,100,220,.25);
-}
-
-/* Services */
-.services{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-  max-width:1000px;
-  margin:auto;
-}
-
-.service{
-  background:white;
-  padding:28px 20px;
-  text-align:center;
-  border-radius:20px;
-  box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
-
-.service .icon{
-  font-size:40px;
-  margin-bottom:12px;
-}
-
-.service h3{
-  margin-bottom:8px;
-  color:#0757d9;
-}
-
-/* Contact */
-.contact-box{
-  max-width:700px;
-  margin:auto;
-  background:white;
-  border-radius:25px;
-  padding:35px;
-  box-shadow:0 8px 25px rgba(0,0,0,.1);
-}
-
-.contact-item{
-  padding:15px 0;
-  border-bottom:1px solid #eee;
-  font-size:18px;
-}
-
-.contact-item:last-child{
-  border-bottom:none;
-}
-
-.contact-item a{
-  color:#0757d9;
-  font-weight:bold;
-  text-decoration:none;
-}
-
-/* Payment */
-.payment{
-  max-width:600px;
-  margin:auto;
-  display:grid;
-  gap:18px;
-}
-
-.pay-card{
-  background:white;
-  padding:25px;
-  border-radius:20px;
-  box-shadow:0 5px 20px rgba(0,0,0,.08);
-  text-align:center;
-}
-
-.pay-card h3{
-  font-size:24px;
-  margin-bottom:8px;
-}
-
-.pay-number{
-  font-size:23px;
-  font-weight:bold;
-}
-
-/* FAQ */
-.faq{
-  max-width:800px;
-  margin:auto;
-}
-
-details{
-  background:white;
-  margin-bottom:12px;
-  padding:18px 20px;
-  border-radius:15px;
-  box-shadow:0 3px 15px rgba(0,0,0,.07);
-}
-
-summary{
-  cursor:pointer;
-  font-weight:bold;
-  color:#0757d9;
-  font-size:17px;
-}
-
-details p{
-  margin-top:12px;
-  line-height:1.6;
-}
-
-/* Footer */
-footer{
-  background:#061a42;
-  color:white;
-  text-align:center;
-  padding:30px 15px;
-}
-
-footer p{
-  margin:7px;
-}
-
-/* Floating WhatsApp */
-.whatsapp{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  width:60px;
-  height:60px;
-  border-radius:50%;
-  background:#25D366;
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-decoration:none;
-  font-size:30px;
-  box-shadow:0 5px 20px rgba(0,0,0,.25);
-  z-index:999;
-}
-
-/* Mobile */
-@media(max-width:700px){
-
-  header{
-    padding:12px 15px;
-  }
-
-  .logo{
-    font-size:18px;
-  }
-
-  nav a{
-    margin-left:8px;
-    font-size:13px;
-  }
-
-  .hero{
-    min-height:500px;
-    padding:50px 15px;
-  }
-
-  .hero h1{
-    font-size:35px;
-  }
-
-  .hero p{
-    font-size:17px;
-  }
-
-  .services{
-    grid-template-columns:1fr;
-  }
-
-  section{
-    padding:45px 15px;
-  }
-
-  .section-title{
-    font-size:27px;
-  }
-
-  .package{
-    padding:28px 20px;
-  }
-
-  .package .speed{
-    font-size:36px;
-  }
-
-  .package .price{
-    font-size:32px;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<!-- Header -->
-<header>
-  <div class="logo">
-    <div class="logo-icon">📶</div>
-    <span>সুমন নেটওয়ার্ক</span>
-  </div>
-
-  <nav>
-    <a href="#home">হোম</a>
-    <a href="#package">প্যাকেজ</a>
-    <a href="#contact">যোগাযোগ</a>
-  </nav>
-</header>
-
-
-<!-- Hero -->
-<section class="hero" id="home">
-  <div>
-    <div class="hero-logo">📶</div>
-
-    <h1>সুমন নেটওয়ার্ক</h1>
-
-    <p>দ্রুত ও নির্ভরযোগ্য Wi-Fi সেবা</p>
-
-    <div class="location">
-      📍 নান্দাইল মন্ডলপাড়া
-    </div>
-
-    <a class="btn" href="#package">🚀 প্যাকেজ দেখুন</a>
-  </div>
-</section>
-
-
-<!-- Package -->
+<!-- Packages -->
 <section id="package">
   <h2 class="section-title">🚀 আমাদের প্যাকেজ</h2>
 
-  <div class="package">
-    <div class="speed">10 Mbps</div>
-
-    <div class="price">৳350</div>
-
-    <small>প্রতি মাস</small>
-
-    <br>
-
-    <a class="btn"
-       href="https://wa.me/8801779202159?text=আমি%2010%20Mbps%20প্যাকেজটি%20নিতে%20চাই।">
-       💬 WhatsApp এ অর্ডার করুন
-    </a>
-  </div>
-</section>
-
-
-<!-- Services -->
-<section>
-  <h2 class="section-title">🛠️ আমাদের সেবা</h2>
-
   <div class="services">
 
-    <div class="service">
-      <div class="icon">📶</div>
-      <h3>দ্রুত Wi-Fi</h3>
-      <p>আপনার প্রয়োজন অনুযায়ী নির্ভরযোগ্য ইন্টারনেট সেবা।</p>
+    <!-- 1 Hour -->
+    <div class="package">
+      <div class="speed">⏱️ ১ ঘণ্টা</div>
+      <div class="price">৳10</div>
+      <small>১ ঘণ্টার ইন্টারনেট</small>
+      <br>
+      <a class="btn"
+         href="https://wa.me/8801779202159?text=আমি%201%20ঘণ্টার%20প্যাকেজটি%20নিতে%20চাই।">
+         💬 কিনতে WhatsApp
+      </a>
     </div>
 
-    <div class="service">
-      <div class="icon">🏠</div>
-      <h3>হোম Wi-Fi</h3>
-      <p>বাসা ও ব্যক্তিগত ব্যবহারের জন্য Wi-Fi সংযোগ।</p>
+    <!-- 2 Hours -->
+    <div class="package">
+      <div class="speed">⏱️ ২ ঘণ্টা</div>
+      <div class="price">৳15</div>
+      <small>২ ঘণ্টার ইন্টারনেট</small>
+      <br>
+      <a class="btn"
+         href="https://wa.me/8801779202159?text=আমি%202%20ঘণ্টার%20প্যাকেজটি%20নিতে%20চাই।">
+         💬 কিনতে WhatsApp
+      </a>
     </div>
 
-    <div class="service">
-      <div class="icon">🛠️</div>
-      <h3>সহায়তা</h3>
-      <p>সংযোগ বা ইন্টারনেট সংক্রান্ত সমস্যায় যোগাযোগ করুন।</p>
+    <!-- Monthly -->
+    <div class="package">
+      <div class="speed">🚀 10 Mbps</div>
+      <div class="price">৳350</div>
+      <small>প্রতি মাস</small>
+      <br>
+      <a class="btn"
+         href="https://wa.me/8801779202159?text=আমি%2010%20Mbps%20মাসিক%20প্যাকেজটি%20নিতে%20চাই।">
+         💬 কিনতে WhatsApp
+      </a>
     </div>
 
   </div>
 </section>
 
 
-<!-- Payment -->
+<!-- Voucher -->
 <section>
-  <h2 class="section-title">💳 পেমেন্ট</h2>
-
-  <div class="payment">
-
-    <div class="pay-card">
-      <h3>বিকাশ</h3>
-      <div class="pay-number">01779202159</div>
-      <p>বিকাশে পেমেন্ট করতে এই নম্বরে টাকা পাঠান।</p>
-    </div>
-
-    <div class="pay-card">
-      <h3>নগদ</h3>
-      <div class="pay-number">01779202159</div>
-      <p>নগদে পেমেন্ট করতে এই নম্বরে টাকা পাঠান।</p>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- Contact -->
-<section id="contact">
-  <h2 class="section-title">📞 যোগাযোগ করুন</h2>
+  <h2 class="section-title">🎟️ Voucher Login</h2>
 
   <div class="contact-box">
 
-    <div class="contact-item">
-      📞 Call Now:
-      <a href="tel:01779202159">01779202159</a>
-    </div>
+    <div style="text-align:center;">
+      <p style="font-size:18px;margin-bottom:15px;">
+        আপনার Voucher Code লিখুন
+      </p>
 
-    <div class="contact-item">
-      💬 WhatsApp:
-      <a href="https://wa.me/8801779202159">01779202159</a>
-    </div>
+      <input
+        type="text"
+        id="voucher"
+        placeholder="Voucher Code"
+        style="
+          width:100%;
+          padding:15px;
+          border:1px solid #ddd;
+          border-radius:12px;
+          font-size:17px;
+          margin-bottom:12px;
+        "
+      >
 
-    <div class="contact-item">
-      📍 ঠিকানা:
-      <strong>নান্দাইল মন্ডলপাড়া</strong>
+      <button
+        onclick="voucherLogin()"
+        class="btn"
+        style="border:0;cursor:pointer;font-size:17px;"
+      >
+        🔐 Login
+      </button>
+
+      <p id="voucherMessage" style="margin-top:15px;"></p>
     </div>
 
   </div>
 </section>
 
+<script>
+function voucherLogin(){
 
-<!-- FAQ -->
-<section>
-  <h2 class="section-title">❓ সাধারণ প্রশ্ন</h2>
+  let code = document.getElementById("voucher").value.trim();
+  let message = document.getElementById("voucherMessage");
 
-  <div class="faq">
+  if(code === ""){
+    message.innerHTML = "⚠️ অনুগ্রহ করে Voucher Code লিখুন।";
+    return;
+  }
 
-    <details>
-      <summary>10 Mbps প্যাকেজের দাম কত?</summary>
-      <p>10 Mbps ইন্টারনেট প্যাকেজের মাসিক মূল্য ৳350।</p>
-    </details>
-
-    <details>
-      <summary>কিভাবে সংযোগ নিতে পারি?</summary>
-      <p>WhatsApp অথবা ফোনে যোগাযোগ করে সংযোগ নেওয়ার বিষয়ে জানতে পারবেন।</p>
-    </details>
-
-    <details>
-      <summary>পেমেন্ট কিভাবে করব?</summary>
-      <p>বিকাশ অথবা নগদের মাধ্যমে পেমেন্ট করা যাবে।</p>
-    </details>
-
-    <details>
-      <summary>আপনাদের ঠিকানা কোথায়?</summary>
-      <p>নান্দাইল মন্ডলপাড়া।</p>
-    </details>
-
-  </div>
-</section>
-
-
-<!-- Footer -->
-<footer>
-  <p>📶 <strong>সুমন নেটওয়ার্ক</strong></p>
-  <p>দ্রুত ও নির্ভরযোগ্য Wi-Fi সেবা</p>
-  <p>📍 নান্দাইল মন্ডলপাড়া</p>
-  <p>© 2026 সুমন নেটওয়ার্ক — All Rights Reserved</p>
-</footer>
-
-
-<!-- Floating WhatsApp -->
-<a class="whatsapp"
-   href="https://wa.me/8801779202159"
-   title="WhatsApp">
-   💬
-</a>
-
-</body>
-</html>
+  message.innerHTML =
+    "✅ Voucher Code নেওয়া হয়েছে। ইন্টারনেট চালু করতে আপনার Wi-Fi Login পেজ ব্যবহার করুন।";
+}
+</script>
