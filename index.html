@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Somun WiFi Zone</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Arial,"Noto Sans Bengali",sans-serif;
+background:#f4f7fb;
+color:#172033
+}
+header{
+background:#0866d6;
+color:white;
+padding:18px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:10
+}
+.logo{font-size:22px;font-weight:bold}
+nav a{
+color:white;
+text-decoration:none;
+margin-left:18px
+}
+.hero{
+padding:90px 20px;
+text-align:center;
+background:linear-gradient(135deg,#e5f1ff,#fff)
+}
+.hero h1{
+font-size:48px;
+margin:15px 0
+}
+.hero p{
+font-size:19px;
+color:#596579
+}
+.btn,button{
+background:#0866d6;
+color:white;
+border:0;
+padding:13px 22px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+text-decoration:none
+}
+section{
+max-width:1100px;
+margin:auto;
+padding:55px 6%
+}
+h2{
+text-align:center;
+font-size:30px;
+margin-bottom:30px
+}
+.packages{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+gap:20px
+}
+.card{
+background:white;
+padding:28px;
+border-radius:16px;
+text-align:center;
+box-shadow:0 5px 20px #00000012
+}
+.card h3{font-size:22px}
+.price{
+font-size:32px;
+font-weight:bold;
+color:#0866d6;
+margin:15px
+}
+.popular{
+border:2px solid #0866d6
+}
+.badge{
+background:#e1efff;
+color:#0866d6;
+padding:6px 12px;
+border-radius:20px;
+font-size:13px
+}
+.login{
+max-width:520px;
+background:white;
+padding:30px;
+border-radius:16px;
+margin:auto;
+box-shadow:0 5px 20px #00000012;
+text-align:center
+}
+input{
+width:100%;
+padding:14px;
+margin:15px 0;
+border:1px solid #ccd3df;
+border-radius:8px;
+font-size:16px
+}
+.contact{
+text-align:center;
+background:white;
+padding:25px;
+border-radius:15px
+}
+footer{
+background:#111827;
+color:white;
+text-align:center;
+padding:25px
+}
+@media(max-width:650px){
+header{flex-direction:column;gap:12px}
+nav a{margin:0 7px}
+.hero h1{font-size:36px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">📶 Somun WiFi Zone</div>
+<nav>
+<a href="#home">হোম</a>
+<a href="#packages">প্যাকেজ</a>
+<a href="#voucher">ভাউচার</a>
+<a href="#contact">যোগাযোগ</a>
+</nav>
+</header>
+
+<section id="home" class="hero">
+<span class="badge">FAST • EASY • CONNECTED</span>
+<h1>Somun WiFi Zone</h1>
+<p>দ্রুত ও সহজ Wi-Fi — আপনার প্রয়োজনের প্যাকেজ বেছে নিন।</p>
+<a class="btn" href="#packages">প্যাকেজ দেখুন</a>
+</section>
+
+<section id="packages">
+<h2>📦 Wi-Fi প্যাকেজ</h2>
+
+<div class="packages">
+
+<div class="card">
+<h3>১ ঘণ্টা</h3>
+<div class="price">৳10</div>
+<p>১ ঘণ্টা ইন্টারনেট</p>
+<button onclick="buy('১ ঘণ্টা','10')">নিন</button>
+</div>
+
+<div class="card">
+<h3>১ দিন</h3>
+<div class="price">৳30</div>
+<p>২৪ ঘণ্টা ইন্টারনেট</p>
+<button onclick="buy('১ দিন','30')">নিন</button>
+</div>
+
+<div class="card">
+<h3>৭ দিন</h3>
+<div class="price">৳100</div>
+<p>৭ দিনের প্যাকেজ</p>
+<button onclick="buy('৭ দিন','100')">নিন</button>
+</div>
+
+<div class="card popular">
+<span class="badge">জনপ্রিয়</span>
+<h3>৩০ দিন</h3>
+<div class="price">৳300</div>
+<p>মাসিক প্যাকেজ</p>
+<button onclick="buy('৩০ দিন','300')">নিন</button>
+</div>
+
+</div>
+</section>
+
+<section id="voucher">
+<h2>🎟️ Voucher Login</h2>
+
+<div class="login">
+<p>আপনার Wi-Fi Voucher Code লিখুন</p>
+
+<input id="voucher"
+placeholder="যেমন: SOMUN-1234">
+
+<button onclick="login()">Login</button>
+
+<p id="message"></p>
+</div>
+</section>
+
+<section id="contact">
+<h2>📞 যোগাযোগ</h2>
+
+<div class="contact">
+<p>📞 ফোন: 01XXXXXXXXX</p>
+<p>📍 ঠিকানা: আপনার এলাকার নাম</p>
+<p>💬 WhatsApp: 01XXXXXXXXX</p>
+</div>
+</section>
+
+<footer>
+© 2026 Somun WiFi Zone
+</footer>
+
+<script>
+function buy(name,price){
+alert("নির্বাচিত প্যাকেজ: "+name+" — ৳"+price);
+document.getElementById("voucher").scrollIntoView({
+behavior:"smooth"
+});
+}
+
+function login(){
+let code=document.getElementById("voucher").value.trim();
+let msg=document.getElementById("message");
+
+if(!code){
+msg.innerText="অনুগ্রহ করে Voucher Code লিখুন।";
+return;
+}
+
+msg.innerText="Voucher যাচাই করার জন্য Hotspot/Backend সংযোগ প্রয়োজন।";
+}
+</script>
+
+</body>
+</html>
