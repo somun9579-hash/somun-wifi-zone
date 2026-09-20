@@ -1,9 +1,10 @@
+
 <!doctype html>
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Somun WiFi Zone</title>
+<title>সুমন নেটওয়ার্ক</title>
 
 <style>
 *{box-sizing:border-box}
@@ -35,6 +36,10 @@ padding:90px 20px;
 text-align:center;
 background:linear-gradient(135deg,#e5f1ff,#fff)
 }
+.wifi{
+font-size:70px;
+margin-bottom:10px
+}
 .hero h1{
 font-size:48px;
 margin:15px 0
@@ -51,7 +56,8 @@ padding:13px 22px;
 border-radius:9px;
 font-weight:bold;
 cursor:pointer;
-text-decoration:none
+text-decoration:none;
+display:inline-block
 }
 section{
 max-width:1100px;
@@ -65,55 +71,44 @@ margin-bottom:30px
 }
 .packages{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px
 }
 .card{
 background:white;
-padding:28px;
+padding:30px;
 border-radius:16px;
 text-align:center;
 box-shadow:0 5px 20px #00000012
 }
-.card h3{font-size:22px}
+.card h3{font-size:25px}
 .price{
-font-size:32px;
+font-size:38px;
 font-weight:bold;
 color:#0866d6;
 margin:15px
 }
 .popular{
-border:2px solid #0866d6
+border:3px solid #0866d6
 }
 .badge{
 background:#e1efff;
 color:#0866d6;
-padding:6px 12px;
+padding:7px 14px;
 border-radius:20px;
-font-size:13px
-}
-.login{
-max-width:520px;
-background:white;
-padding:30px;
-border-radius:16px;
-margin:auto;
-box-shadow:0 5px 20px #00000012;
-text-align:center
-}
-input{
-width:100%;
-padding:14px;
-margin:15px 0;
-border:1px solid #ccd3df;
-border-radius:8px;
-font-size:16px
+font-size:14px
 }
 .contact{
 text-align:center;
 background:white;
-padding:25px;
-border-radius:15px
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 20px #00000012
+}
+.contact a{
+color:#0866d6;
+font-weight:bold;
+text-decoration:none
 }
 footer{
 background:#111827;
@@ -132,19 +127,19 @@ nav a{margin:0 7px}
 <body>
 
 <header>
-<div class="logo">📶 Somun WiFi Zone</div>
+<div class="logo">📶 সুমন নেটওয়ার্ক</div>
 <nav>
 <a href="#home">হোম</a>
 <a href="#packages">প্যাকেজ</a>
-<a href="#voucher">ভাউচার</a>
 <a href="#contact">যোগাযোগ</a>
 </nav>
 </header>
 
 <section id="home" class="hero">
-<span class="badge">FAST • EASY • CONNECTED</span>
-<h1>Somun WiFi Zone</h1>
-<p>দ্রুত ও সহজ Wi-Fi — আপনার প্রয়োজনের প্যাকেজ বেছে নিন।</p>
+<div class="wifi">📶</div>
+<h1>সুমন নেটওয়ার্ক</h1>
+<p>দ্রুত ও নির্ভরযোগ্য Wi-Fi সেবা</p>
+<p>📍 নান্দাইল মন্ডলপাড়া</p>
 <a class="btn" href="#packages">প্যাকেজ দেখুন</a>
 </section>
 
@@ -153,87 +148,35 @@ nav a{margin:0 7px}
 
 <div class="packages">
 
-<div class="card">
-<h3>১ ঘণ্টা</h3>
-<div class="price">৳10</div>
-<p>১ ঘণ্টা ইন্টারনেট</p>
-<button onclick="buy('১ ঘণ্টা','10')">নিন</button>
-</div>
-
-<div class="card">
-<h3>১ দিন</h3>
-<div class="price">৳30</div>
-<p>২৪ ঘণ্টা ইন্টারনেট</p>
-<button onclick="buy('১ দিন','30')">নিন</button>
-</div>
-
-<div class="card">
-<h3>৭ দিন</h3>
-<div class="price">৳100</div>
-<p>৭ দিনের প্যাকেজ</p>
-<button onclick="buy('৭ দিন','100')">নিন</button>
-</div>
-
 <div class="card popular">
-<span class="badge">জনপ্রিয়</span>
-<h3>৩০ দিন</h3>
-<div class="price">৳300</div>
-<p>মাসিক প্যাকেজ</p>
-<button onclick="buy('৩০ দিন','300')">নিন</button>
+<span class="badge">⭐ জনপ্রিয় প্যাকেজ</span>
+<h3>10 Mbps</h3>
+<div class="price">৳350</div>
+<p>মাসিক ইন্টারনেট প্যাকেজ</p>
+<p>⚡ দ্রুত স্পিড</p>
+<p>📶 নির্ভরযোগ্য Wi-Fi</p>
+<a class="btn"
+href="https://wa.me/8801779202159?text=আমি%2010%20Mbps%20প্যাকেজটি%20নিতে%20চাই।">
+WhatsApp-এ যোগাযোগ করুন
+</a>
 </div>
 
-</div>
-</section>
-
-<section id="voucher">
-<h2>🎟️ Voucher Login</h2>
-
-<div class="login">
-<p>আপনার Wi-Fi Voucher Code লিখুন</p>
-
-<input id="voucher"
-placeholder="যেমন: SOMUN-1234">
-
-<button onclick="login()">Login</button>
-
-<p id="message"></p>
 </div>
 </section>
 
 <section id="contact">
-<h2>📞 যোগাযোগ</h2>
+<h2>📞 যোগাযোগ করুন</h2>
 
 <div class="contact">
-<p>📞 ফোন: 01XXXXXXXXX</p>
-<p>📍 ঠিকানা: আপনার এলাকার নাম</p>
-<p>💬 WhatsApp: 01XXXXXXXXX</p>
+<p>📞 ফোন: <a href="tel:01779202159">01779202159</a></p>
+<p>💬 WhatsApp: <a href="https://wa.me/8801779202159">01779202159</a></p>
+<p>📍 ঠিকানা: নান্দাইল মন্ডলপাড়া</p>
 </div>
 </section>
 
 <footer>
-© 2026 Somun WiFi Zone
+© 2026 সুমন নেটওয়ার্ক
 </footer>
-
-<script>
-function buy(name,price){
-alert("নির্বাচিত প্যাকেজ: "+name+" — ৳"+price);
-document.getElementById("voucher").scrollIntoView({
-behavior:"smooth"
-});
-}
-
-function login(){
-let code=document.getElementById("voucher").value.trim();
-let msg=document.getElementById("message");
-
-if(!code){
-msg.innerText="অনুগ্রহ করে Voucher Code লিখুন।";
-return;
-}
-
-msg.innerText="Voucher যাচাই করার জন্য Hotspot/Backend সংযোগ প্রয়োজন।";
-}
-</script>
 
 </body>
 </html>
