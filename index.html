@@ -1,48 +1,57 @@
-<div class="contact-row"><span class="contact-icon">📞</span><div><small>Call Now</small><br><a style="color:#fff;font-size:22px;font-weight:900" href="tel:01779202159">01779202159</a></div></div>
-    <div class="contact-row"><span class="contact-icon">💬</span><div><small>WhatsApp</small><br><a style="color:#fff;font-size:22px;font-weight:900" href="https://wa.me/8801779202159">01779202159</a></div></div>
-   </div>
-   <div class="location">
-    <h3>📍 আমাদের অবস্থান</h3><p><strong>নান্দাইল মন্ডলপাড়া</strong></p>
-    <div class="map">📍</div>
-    <a class="btn btn-primary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=নান্দাইল%20মন্ডলপাড়া">🗺️ Google Maps</a>
-   </div>
-  </div>
- </div>
-</section>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>সুমন নেটওয়ার্ক | Wi-Fi Service</title>
 
-<section>
- <div class="container">
-  <div class="section-head"><h2>❓ সাধারণ প্রশ্ন</h2></div>
-  <div class="faq">
-   <details><summary>১ ঘণ্টার প্যাকেজের দাম কত?</summary><p>১ ঘণ্টার প্যাকেজ ৳20।</p></details>
-   <details><summary>২ ঘণ্টার প্যাকেজের দাম কত?</summary><p>২ ঘণ্টার প্যাকেজ ৳30।</p></details>
-   <details><summary>10 Mbps প্যাকেজের দাম কত?</summary><p>10 Mbps মাসিক প্যাকেজ ৳350।</p></details>
-   <details><summary>পেমেন্ট কিভাবে করব?</summary><p>বিকাশ অথবা নগদে 01779202159 নম্বরে পেমেন্ট করতে পারবেন।</p></details>
-   <details><summary>কিভাবে যোগাযোগ করব?</summary><p>Call Now অথবা WhatsApp বাটনে চাপ দিয়ে সরাসরি যোগাযোগ করুন।</p></details>
-  </div>
- </div>
-</section>
-</main>
-
-<footer>
- <div class="brand"><span class="brand-icon">📶</span>সুমন নেটওয়ার্ক</div>
- <p>দ্রুত ও নির্ভরযোগ্য Wi-Fi সেবা</p>
- <p>📍 নান্দাইল মন্ডলপাড়া</p>
- <p style="opacity:.75;margin-top:10px">© 2026 সুমন নেটওয়ার্ক — সর্বস্বত্ব সংরক্ষিত</p>
-</footer>
-
-<a class="float" href="https://wa.me/8801779202159" aria-label="WhatsApp">💬</a>
-<button class="top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Top">↑</button>
-<div class="toast" id="toast">নম্বর কপি হয়েছে ✅</div>
-
-<script>
-function copyNumber(number){
-  navigator.clipboard?.writeText(number).then(showToast).catch(()=>{
-    const t=document.createElement('textarea');t.value=number;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();showToast();
-  });
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+font-family:Arial,"Noto Sans Bengali",sans-serif;
+background:#f4f8ff;color:#172033;line-height:1.6
 }
-function showToast(){const x=document.getElementById('toast');x.classList.add('show');setTimeout(()=>x.classList.remove('show'),1800)}
-function toggleTheme(){document.body.classList.toggle('dark');const b=document.querySelector('.theme');b.textContent=document.body.classList.contains('dark')?'🌙':'☀️';}
-</script>
-</body>
-</html>
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:auto;padding:0 18px}
+
+header{
+position:sticky;top:0;z-index:99;
+background:linear-gradient(135deg,#0757d9,#00a8ff);
+color:white;box-shadow:0 3px 15px #0002
+}
+.nav{
+max-width:1100px;margin:auto;padding:14px 18px;
+display:flex;justify-content:space-between;align-items:center
+}
+.logo{font-size:22px;font-weight:bold}
+.nav a{margin-left:15px;font-weight:bold}
+
+.hero{
+padding:55px 18px;
+background:linear-gradient(135deg,#0757d9,#00b7ff);
+color:white
+}
+.hero-grid{
+max-width:1100px;margin:auto;
+display:grid;grid-template-columns:1.1fr .9fr;
+gap:35px;align-items:center
+}
+.badge{
+display:inline-block;background:#ffffff25;
+padding:7px 14px;border-radius:30px;margin-bottom:15px
+}
+.hero h1{font-size:46px;line-height:1.15;margin-bottom:15px}
+.hero p{font-size:18px;margin-bottom:22px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+display:inline-block;padding:12px 20px;border-radius:30px;
+font-weight:bold;background:white;color:#0757d9
+}
+.btn.whatsapp{background:#18c96e;color:white}
+.hero-img{
+width:100%;border-radius:25px;box-shadow:0 15px 40px #0004
+}
+
+section{padding:55px 0}
+.title{text-align:center;margin-bottom:30px}
+.title h2{font-size:30px;color:#075
